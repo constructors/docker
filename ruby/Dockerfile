@@ -1,26 +1,13 @@
 # Constructors default Ruby container
 
-FROM debian:jessie
+FROM constructors/common
 MAINTAINER Joris van Rooij <jorrizza@jrrzz.net>
 
-RUN apt-get update \
-    && apt-get install -y \
-       ruby \
-       ruby-dev \
-       build-essential \
-       libpq-dev \
-       rsync \
-    && apt-get clean
-RUN gem install bundler foreman
-RUN adduser --disabled-password --home=/app --gecos "" --uid=2000 app
-
-VOLUME /static
+# Ruby is already shipped by constructors/common
+RUN gem install bundler
 
 ONBUILD COPY app /app
 ONBUILD RUN chown -R app:app /app /static
 ONBUILD WORKDIR /app
 ONBUILD USER app
 ONBUILD RUN bundle install --deployment --clean
-
-ENTRYPOINT ["foreman"]
-CMD ["start"]
