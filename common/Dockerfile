@@ -15,6 +15,7 @@ RUN gem install foreman
 RUN adduser --disabled-password --home=/app --gecos "" --uid=2000 app
 
 VOLUME /static
+VOLUME /storage
 
 ENTRYPOINT ["foreman"]
 CMD ["start"]
