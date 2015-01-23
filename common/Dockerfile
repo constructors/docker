@@ -8,8 +8,10 @@ RUN apt-get update \
        ruby \
        ruby-dev \
        build-essential \
-       libpq-dev \
        rsync \
+       libpq-dev \
+       libjpeg-dev \
+       libpng12-dev \
     && apt-get clean
 RUN gem install foreman
 RUN adduser --disabled-password --home=/app --gecos "" --uid=2000 app
