@@ -8,6 +8,8 @@ RUN apt-get update \
     default-jdk \
     default-jre
 
+ENV JAVA_HOME /usr/lib/jvm/java-7-openjdk-amd64/jre/
+
 ONBUILD COPY app /app
 ONBUILD RUN chown -R app:app /app /static
 ONBUILD WORKDIR /app
