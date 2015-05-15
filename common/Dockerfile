@@ -13,8 +13,12 @@ RUN apt-get update \
        libpq-dev \
        libjpeg-dev \
        libpng12-dev \
+       npm \
+       git \
     && apt-get clean
+RUN ln -s /usr/bin/nodejs /usr/local/bin/node
 RUN gem install foreman
+RUN npm install -g bower
 RUN adduser --disabled-password --home=/app --gecos "" --uid=2000 app
 
 VOLUME /static
