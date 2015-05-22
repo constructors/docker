@@ -1,6 +1,6 @@
 # Constructors default Python container
 
-FROM constructors/common-app
+FROM constructors/common
 MAINTAINER Joris van Rooij <jorrizza@jrrzz.net>
 
 RUN apt-get update \
@@ -12,8 +12,3 @@ RUN apt-get update \
 RUN ln -s /usr/bin/python3 /usr/local/bin/python && \
     ln -s /usr/bin/pip3 /usr/local/bin/pip
 
-ONBUILD COPY app /app
-ONBUILD RUN chown -R app:app /app /static
-ONBUILD WORKDIR /app
-ONBUILD RUN pip install -r requirements.txt
-ONBUILD USER app

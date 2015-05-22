@@ -2,7 +2,7 @@
 # Updates all container types and publishes the updates
 
 # Container types, dependency order matters
-TYPES="common common-app ruby python-legacy python java"
+TYPES="common ruby ruby-app python-legacy python-legacy-app python python-app java java-app"
 
 for TYPE in $TYPES; do
     make -C "$TYPE" build push clean
