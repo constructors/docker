@@ -1,6 +1,6 @@
 # Constructors default Ruby container
 
-FROM constructors/common
+FROM constructors/common-app
 MAINTAINER Joris van Rooij <jorrizza@jrrzz.net>
 
 # Ruby is already shipped by constructors/common

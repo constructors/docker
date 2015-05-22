@@ -17,6 +17,7 @@ RUN apt-get update \
        libpng12-dev \
        npm \
        git \
+       mercurial \
     && apt-get clean
 
 # UTF-8 by default
@@ -38,6 +39,3 @@ VOLUME /static
 # Dynamic files (uploads etc) go here
 VOLUME /storage
 
-# We run everything through Foreman
-ENTRYPOINT ["foreman"]
-CMD ["start"]

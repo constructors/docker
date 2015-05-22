@@ -1,6 +1,6 @@
 # Constructors default Python legacy container
 
-FROM constructors/common
+FROM constructors/common-app
 MAINTAINER Joris van Rooij <jorrizza@jrrzz.net>
 
 RUN apt-get update \
