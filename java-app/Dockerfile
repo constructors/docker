@@ -4,7 +4,8 @@ FROM constructors/java
 MAINTAINER Joris van Rooij <jorrizza@jrrzz.net>
 
 ONBUILD COPY app /app
-ONBUILD RUN chown -R app:app /app /static
+ONBUILD RUN chown -R app:app /app /static \
+            && chown app:app /storage
 ONBUILD WORKDIR /app
 ONBUILD USER app
 

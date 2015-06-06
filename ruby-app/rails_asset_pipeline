@@ -1,0 +1,7 @@
+#!/bin/sh
+# Build Rails assets and puts them where they belong.
+
+if [ -d public/ ]; then
+  bundle exec rake assets:precompile \
+  && rsync -tprl --delete --chmod=D0755,F0644 public/ /static/
+fi
