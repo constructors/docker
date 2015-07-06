@@ -15,7 +15,8 @@ ONBUILD RUN bundle install --deployment --clean
 
 # Rails assets manifest persistence hack
 ONBUILD RUN test -e config/initializers/assets.rb \
-            && echo "\n\nRails.application.config.assets.manifest = '/storage/.sprockets-manifest.json'" >> config/initializers/assets.rb
+            && echo "\n\nRails.application.config.assets.manifest = '/storage/.sprockets-manifest.json'" >> config/initializers/assets.rb \
+            || true
 
 # We run everything through Foreman
 ENTRYPOINT ["foreman"]
