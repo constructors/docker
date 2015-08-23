@@ -13,6 +13,7 @@ RUN apt-get update \
        build-essential \
        rsync \
        libpq-dev \
+       postgresql-client \
        libjpeg-dev \
        libpng12-dev \
        npm \
