@@ -16,6 +16,9 @@ RUN apt-get update \
        postgresql-client \
        libjpeg-dev \
        libpng12-dev \
+       libmagickcore-dev \
+       libmagickwand-dev \
+       libncurses-dev \
        npm \
        git \
        mercurial \
