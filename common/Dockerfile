@@ -5,6 +5,7 @@ MAINTAINER Joris van Rooij <jorrizza@jrrzz.net>
 
 # Basic packages
 RUN apt-get update \
+    && apt-get dist-upgrade -y \
     && apt-get install -y \
        locales \
        apt-transport-https \
